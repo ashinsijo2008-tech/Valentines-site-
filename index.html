@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine? 💘</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #333;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 420px;
+      width: 90%;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #yesBtn {
+      background-color: #ff4d6d;
+      color: white;
+    }
+
+    #noBtn {
+      background-color: #ccc;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+
+    .love-text {
+      margin-top: 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <!-- FIRST SCREEN -->
+    <div id="question">
+      <h1>Will you be my Valentine? 💖</h1>
+      <button id="yesBtn">Yes 💕</button>
+      <button id="noBtn">No 🙄</button>
+    </div>
+
+    <!-- YES SCREEN -->
+    <div id="yesScreen" class="hidden">
+      <h1>I love you so much 💗</h1>
+      <p class="love-text">
+        You mean the world to me. Even when we’re far apart, you’re always in my heart.
+        Thank you for being you 💘
+      </p>
+
+      <div class="gallery">
+        <!-- Replace these image links with her pictures -->
+        <img src="https://via.placeholder.com/350x400?text=Her+Pic+1" alt="Her pic 1" />
+        <img src="https://via.placeholder.com/350x400?text=Her+Pic+2" alt="Her pic 2" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const question = document.getElementById('question');
+    const yesScreen = document.getElementById('yesScreen');
+
+    yesBtn.addEventListener('click', () => {
+      question.classList.add('hidden');
+      yesScreen.classList.remove('hidden');
+    });
+
+    // Make the "No" button move so it's hard to click (funny + cute)
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
